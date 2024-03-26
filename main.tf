@@ -73,8 +73,8 @@ resource "azurerm_redhat_openshift_cluster" "aro" {
   resource_group_name = azurerm_resource_group.rg.name
 
   cluster_profile {
-    domain  = "${var.domain}"
-    version = "4.13.25"
+    domain  = "${var.domain}.${var.location}.aroapp.io"
+    version = "4.13.23"
   }
 
   network_profile {
@@ -116,3 +116,4 @@ resource "azurerm_redhat_openshift_cluster" "aro" {
 output "console_url" {
   value = azurerm_redhat_openshift_cluster.aro.console_url
 }
+
