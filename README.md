@@ -6,7 +6,7 @@ Repository for the Jfrog ARO POC Project
 
 ## Diagram
 
-![alt text](https://github.com/zakarel/ARO-POC-jfrog/blob/main/Diagram-jfrog-tf-aro.png?raw=true)
+![alt text](https://github.com/zakarel/ARO-POC-jfrog/blob/main/Diagram-jfrog-tf-aro-v3.png?raw=true)
 
 ## Technical details
 
