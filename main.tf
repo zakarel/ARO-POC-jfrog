@@ -103,7 +103,7 @@ resource "azurerm_redhat_openshift_cluster" "aro" {
   }
 
   service_principal {
-    client_id     = azuread_application.sp.client_id
+    client_id     = azuread_application.example.client_id
     client_secret = azuread_service_principal_password.pass.value
   }
 
