@@ -1,6 +1,10 @@
-// registering provider for Azure Red Hat OpenShift
+// registering provider for Azure Red Hat OpenShift - Default will skip provider registration
 resource "azurerm_resource_provider_registration" "reg-aro" {
   name = "Microsoft.RedHatOpenShift"
+}
+
+resource "azurerm_resource_provider_registration" "reg-nw" {
+  name = "Microsoft.Network"
 }
 
 // Configure the Azure provider
