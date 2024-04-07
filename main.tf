@@ -4,20 +4,20 @@ resource "azurerm_resource_provider_registration" "reg-aro" {
 }
 
 // Configure the Azure provider
-data "azurerm_client_config" "cc" {}
+data "azurerm_client_config" "example" {}
 // Azure AD Application and Service Principal for the Red Hat OpenShift cluster
-data "azuread_client_config" "ad-cc" {}
+data "azuread_client_config" "example" {}
 
-resource "azuread_application" "sp" {
+resource "azuread_application" "example" {
   display_name = "sp-aro"
 }
 
-resource "azuread_service_principal" "sp" {
-  client_id = azuread_application.sp.client_id
+resource "azuread_service_principal" "example" {
+  client_id = azuread_application.example.client_id
 }
 
 resource "azuread_service_principal_password" "pass" {
-  service_principal_id = azuread_service_principal.sp.object_id
+  service_principal_id = azuread_service_principal.example.object_id
 }
 
 data "azuread_service_principal" "redhatopenshift" {
