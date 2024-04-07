@@ -1,23 +1,23 @@
 // registering provider for Azure Red Hat OpenShift
-resource "azurerm_resource_provider_registration" "reg-aro" {
+resource "azurerm_resource_provider_registration" "example" {
   name = "Microsoft.RedHatOpenShift"
 }
 
 // Configure the Azure provider
-data "azurerm_client_config" "cc" {}
+data "azurerm_client_config" "example" {}
 // Azure AD Application and Service Principal for the Red Hat OpenShift cluster
-data "azuread_client_config" "ad-cc" {}
+data "azuread_client_config" "example" {}
 
-resource "azuread_application" "sp" {
-  display_name = "sp-aro"
+resource "azuread_application" "example" {
+  display_name = "sp-aro-jfrog"
 }
 
-resource "azuread_service_principal" "sp" {
-  client_id = azuread_application.sp.client_id
+resource "azuread_service_principal" "example" {
+  client_id = azuread_application.example.client_id
 }
 
-resource "azuread_service_principal_password" "pass" {
-  service_principal_id = azuread_service_principal.sp.object_id
+resource "azuread_service_principal_password" "example" {
+  service_principal_id = azuread_service_principal.example.object_id
 }
 
 data "azuread_service_principal" "redhatopenshift" {
