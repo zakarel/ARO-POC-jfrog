@@ -7,6 +7,10 @@ resource "azurerm_resource_provider_registration" "reg-nw" {
   name = "Microsoft.Network"
 }
 
+resource "azurerm_resource_provider_registration" "reg-nw" {
+  name = "Microsoft.Compute"
+}
+
 // Configure the Azure provider
 data "azurerm_client_config" "example" {}
 // Azure AD Application and Service Principal for the Red Hat OpenShift cluster
