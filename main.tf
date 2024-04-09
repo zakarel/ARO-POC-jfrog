@@ -7,7 +7,7 @@ resource "azurerm_resource_provider_registration" "reg-nw" {
   name = "Microsoft.Network"
 }
 
-resource "azurerm_resource_provider_registration" "reg-nw" {
+resource "azurerm_resource_provider_registration" "reg-comp" {
   name = "Microsoft.Compute"
 }
 
